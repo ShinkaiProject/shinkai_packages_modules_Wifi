@@ -504,8 +504,7 @@ public class WifiApConfigStore {
     private SoftApConfiguration getDefaultApConfiguration() {
         SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder();
         configBuilder.setBand(generateDefaultBand(mContext));
-        configBuilder.setSsid(mResourceCache.getString(
-                R.string.wifi_tether_configure_ssid_default) + "_" + getRandomIntForDefaultSsid());
+        configBuilder.setSsid(mResourceCache.getString(R.string.wifi_tether_configure_ssid_default));
         try {
             if (ApConfigUtil.isWpa3SaeSupported(mContext)) {
                 configBuilder.setPassphrase(generatePassword(),
